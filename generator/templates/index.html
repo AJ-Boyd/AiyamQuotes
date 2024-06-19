@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/6258c12eb7.js" crossorigin="anonymous"></script>
+    <title>QuoteAiyam--AI Quote Generator</title>
+</head>
+<body>
+    <div id="top" class="container-fluid">
+        <nav class="navbar navbar-expand-sm">
+            <a class="navbar-brand" href="javascript:void(0)">AiyamQuotes</a>
+            <div class="container-fluid">
+                <ul class="navbar-nav me-auto">   
+                    <li class="nav-item"><a class="nav-link" href="/">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Quotes</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="about" class="container">
+            <h2><i>"Cogito Ergo Sum"</i></h2>
+            <h1>I think therefore <span class="imp">Aiyam</span>.</h1>
+            <br>
+            I am Aiyam, an AI language tool commited to providing sage and inspirational quotes to enrich your dull human minds.  
+            <br>
+            <br>
+            <a href="#middle" id="get-started" class="btn btn-dark">Get Started</a>
+        </div>
+    </div>
+    <div id="middle" class="container-fluid">
+        <div id="generator-container">
+            <h1>I need a quote that is...</h1>
+            <form method="POST" id="adj-form">
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective1"> Adjective 1</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective2"> Adjective 2</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective3"> Adjective 3</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective4"> Adjective 4</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective5"> Adjective 5</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective6"> Adjective 6</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective7"> Adjective 7</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective8"> Adjective 8</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective9"> Adjective 9</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective10"> Adjective 10</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective11"> Adjective 11</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective12"> Adjective 12</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective13"> Adjective 13</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective14"> Adjective 14</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective15"> Adjective 15</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective16"> Adjective 16</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective17"> Adjective 17</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective18"> Adjective 18</label>
+                <br>
+                
+                <button type="submit" id="generate-btn" class="btn btn-success">Generate</button>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

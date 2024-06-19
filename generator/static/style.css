@@ -1,0 +1,74 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    color:#e6e6e6;
+    background-color: #1f1f2e;
+}
+#top{
+    background: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid black;
+    height: 100%;
+}
+.navbar{
+    padding: 0;
+}
+.nav-link{
+    color: #5e5e69;
+    font-size: 28px;
+}
+.navbar-brand{
+    font-size: 32px;
+    padding-left: 2%;
+    color:#e6e6e6;
+}
+
+#about{
+    width: 38%;
+    margin: auto;
+    padding-top: 10%;
+    font-size: 24px;
+}
+#about h1, #about h2{
+    text-align: center;
+}
+.imp{
+    /* color: #3399ff; */
+    color: #2d363f;
+    text-decoration: underline;
+    text-shadow: 0px 0px 10px #CCC;
+}
+#get-started, #generate-btn{
+    display: block;
+    width: fit-content;
+    margin: 3% auto;
+    font-size: 18px;
+}
+
+#middle{
+    height: 100%;
+}
+#generator-container{
+    width: 50%;
+    border: 1px solid black;
+    margin: auto;
+    padding-top: 7%;
+}
+#adj-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    width: 90%;
+    gap: 10px; 
+    margin: 5% auto; 
+}
+  
+.checkbox-form label {
+display: flex;
+align-items: center;
+}
+
+.checkbox-form input[type="checkbox"] {
+margin-right: 10px;
+}
