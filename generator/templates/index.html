@@ -17,7 +17,7 @@
             <div class="container-fluid">
                 <ul class="navbar-nav me-auto">   
                     <li class="nav-item"><a class="nav-link" href="/">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/">Quotes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#middle">Quotes</a></li>
                 </ul>
             </div>
         </nav>
@@ -33,30 +33,32 @@
     </div>
     <div id="middle" class="container-fluid">
         <div id="generator-container">
-            <h1>I need a quote that is...</h1>
-            <form method="POST" id="adj-form">
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective1"> Adjective 1</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective2"> Adjective 2</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective3"> Adjective 3</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective4"> Adjective 4</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective5"> Adjective 5</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective6"> Adjective 6</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective7"> Adjective 7</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective8"> Adjective 8</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective9"> Adjective 9</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective10"> Adjective 10</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective11"> Adjective 11</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective12"> Adjective 12</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective13"> Adjective 13</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective14"> Adjective 14</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective15"> Adjective 15</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective16"> Adjective 16</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective17"> Adjective 17</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="adjective18"> Adjective 18</label>
+            <h2>I need a quote that is/is about...</h2>
+            <form action="/submit" method="POST" id="adj-form">
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Poetic"> Poetic</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Existential"> Existential</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Discipline"> Disciplined</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Inspirational"> Inspirational</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Deep"> Deep</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Stoicism"> Stoic</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Emotional"> Emotional</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Wisdom"> Wise</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Foreboding"> Foreboding</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Boredom"> Boring</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Medieval"> Medieval</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Proverbial"> Proverbial</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="aFunny"> Funny</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Encouraging"> Encouraging</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Zany"> Zany</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Peace and love"> Love</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Graphically sexual and horny for humans"> Spicy ;)</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Unnecessary amounts of violence and gore"> War</label>
                 <br>
                 
                 <button type="submit" id="generate-btn" class="btn btn-success">Generate</button>
             </form>
+            <br>
+            <div id="quote">{{ quote }}</div>
         </div>
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
