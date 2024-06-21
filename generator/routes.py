@@ -13,14 +13,14 @@ routes = Blueprint("routes", __name__)
 @routes.route('/', methods=['POST', 'GET'])
 def home():
     # quote = request.args.get('quote', 'Dummy quote')
-    quote = session.get('quote', 'Dummy quote')
+    quote = session.get("quote", "")
     return render_template("index.html", quote=quote)
 
 @routes.route('/submit', methods=["POST"])
 def submit():
     print("post request received!")
     adjectives = request.form.getlist("adjective")
-    print("Selected Adjectives:", adjectives)
+    print("Selected themes:", adjectives)
     quote = gen_quote(adjectives)
     print(quote)
     session['quote'] = quote

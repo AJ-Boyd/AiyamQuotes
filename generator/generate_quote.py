@@ -8,16 +8,18 @@ desc: generates a quote that embodies a list of adjectives
 from langchain_community.llms import Ollama
 from langchain_core.callbacks import CallbackManager, StreamingStdOutCallbackHandler
 from langchain_core.prompts import PromptTemplate
-import re
-
-SYS_PROMPT = "You are Aiyam, an AI language tool committed to providing short, stupid, nonsensical quotes to entertain. The quotes should be bad enough that it's clear an AI made them."
+import re, random
+#It's important that the quotes do not directly name the theme they embody. 
+SYS_PROMPT = "You are Aiyam, an AI language tool pretending to be a half-baked philosopher who gives short, stupid, nonsensical quotes and sayings. The quotes should be bad enough that it's clear they are satire."
 PROMPT = """
-Put your generated quote in angle brackets. Generate one single unique, random, and entertaining quote in less than 15 words that subtly embodies different themes. 
-It's important that the quotes do not directly name the theme they embody. 
+Put your generated quote in square brackets and not quotations. Generate one single unique, random, and ironic saying or quote in less than 15 words that subtly embodies different themes. 
+Quotes must be taken from the perspective of humans and may contain mature themes.\n
 
 Here is the list of themes: 
 """
-def gen_quote(adjectives: list) -> str:
+def gen_quote(themes: list) -> str:
+    themes = random.sample(themes, len(themes))
+    print("shuffled themes:", themes)
     llm = Ollama(
         model = "mistral",
         verbose = False,
@@ -27,14 +29,16 @@ def gen_quote(adjectives: list) -> str:
         top_k = 50,
         top_p = 0.95
     )
-    response = llm.invoke(PROMPT + str(adjectives))
+    response = llm.invoke(PROMPT + str(themes))
     print("response:", response)
     # text cleaning!
     response = response.strip()
-    pattern = r'<([^\"]*)>'
-    match = re.search(pattern, response)
-    if match:
-        response = match.group(1)
+    pattern = r'\[([^\]]*)\]'
+    matches = re.findall(pattern, response)
+    if matches:
+        print("matches!")
+        response = matches[0]
+    response = response.replace("\"", "\'")
     if response.startswith("\"") == False:
         response = "\"" + response
     if response.endswith("\"") == False:

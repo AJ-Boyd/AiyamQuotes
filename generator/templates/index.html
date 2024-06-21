@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/6258c12eb7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lancelot&display=swap" rel="stylesheet">
     <title>QuoteAiyam--AI Quote Generator</title>
 </head>
 <body>
@@ -35,30 +38,33 @@
         <div id="generator-container">
             <h2>I need a quote that is/is about...</h2>
             <form action="/submit" method="POST" id="adj-form">
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Poetic"> Poetic</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Poltical themes of backstabbing and revolution."> Politics</label>
                 <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Existential"> Existential</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Discipline"> Disciplined</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Containing vulgarity"> Vulgar</label>
                 <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Inspirational"> Inspirational</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Deep"> Deep</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Pretending to be deep to sound cool"> Deep</label>
                 <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Stoicism"> Stoic</label>
                 <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Emotional"> Emotional</label>
                 <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Wisdom"> Wise</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Foreboding"> Foreboding</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Stupid and not poetic at all. The dumbest thing you can think of"> Stupid</label>
                 <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Boredom"> Boring</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Medieval"> Medieval</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Shakespearean"> Medieval</label>
                 <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Proverbial"> Proverbial</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="aFunny"> Funny</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Funny"> Funny</label>
                 <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Encouraging"> Encouraging</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Zany"> Zany</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Peace and love"> Love</label>
-                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Graphically sexual and horny for humans"> Spicy ;)</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Borderline gibberish, nonsense"> Zany</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Wholsome, cute love"> Love</label>
+                <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Contains flirty sexual themes from a human's perspective"> Spicy ;)</label>
                 <label><input type="checkbox" onclick="limitAdj();" name="adjective" value="Unnecessary amounts of violence and gore"> War</label>
                 <br>
-                
                 <button type="submit" id="generate-btn" class="btn btn-success">Generate</button>
             </form>
             <br>
-            <div id="quote">{{ quote }}</div>
+            <blockquote id="quote" class="blockquote text-center lancelot-regular">
+                <p>{{ quote }}</p>
+                <footer class="blockquote-footer"><cite title="AI yam... I AM">Aiyam</cite></footer>
+            </blockquote>
+
         </div>
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
